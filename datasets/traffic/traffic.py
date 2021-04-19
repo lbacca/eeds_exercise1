@@ -32,4 +32,4 @@ sns.lineplot(x="DateTime", y="Vehicles",
 plt.show()
 
 sns.lineplot(x="DateTime", y="Vehicles",
-             hue="Junction", data=df[df.index > '2017-01-01'])
+             hue="Junction", data=df[df.index > '2017-05-01'])
