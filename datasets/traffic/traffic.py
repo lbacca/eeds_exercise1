@@ -8,7 +8,9 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 import seaborn as sns
-sns.set(rc={'figure.figsize':(11.7,8.27)})
+import matplotlib.pyplot as plt
+
+sns.set(rc={'figure.figsize':(12,9)})
 
 path = Path(__file__).parent.absolute()
 
@@ -27,3 +29,7 @@ df.index = pd.to_datetime(df.index)
 
 sns.lineplot(x="DateTime", y="Vehicles",
              hue="Junction", data=df)
+plt.show()
+
+sns.lineplot(x="DateTime", y="Vehicles",
+             hue="Junction", data=df[df.index > '2017-01-01'])
