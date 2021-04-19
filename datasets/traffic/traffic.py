@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 import seaborn as sns
+sns.set(rc={'figure.figsize':(11.7,8.27)})
 
 path = Path(__file__).parent.absolute()
 
@@ -23,6 +24,6 @@ print(df.count())
 df.set_index('DateTime',inplace=True)
 df.index = pd.to_datetime(df.index)
 
-df_week = df.resample('W').sum()
 
-sns.histplot(df_week,x='DateTime',y='Vehicles')
+sns.lineplot(x="DateTime", y="Vehicles",
+             hue="Junction", data=df)
